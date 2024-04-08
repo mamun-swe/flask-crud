@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development files
+venv/
+.env
+
+# Environment variables
+.env
+
+# Dependency directories
+env/
+build/
+lib/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
