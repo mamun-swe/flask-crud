@@ -24,3 +24,12 @@ class UserRepository:
             serialized_user = user.serialize()
             return serialized_user
         return None
+
+    @staticmethod
+    def destroy(id: int):
+        user = User.query.get(id)
+        if user:
+            db.session.delete(user)
+            db.session.commit()
+            return True
+        return False

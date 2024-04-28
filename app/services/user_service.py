@@ -3,13 +3,17 @@ from app.repositories.user_repository import UserRepository
 
 class UserService:
     @staticmethod
-    def get_all_users():
+    def index():
         return UserRepository.index()
 
     @staticmethod
-    def get_user_by_id(id: int):
+    def store():
+        return UserRepository.store()
+
+    @staticmethod
+    def show(id: int):
         return UserRepository.show(id)
 
     @staticmethod
-    def create_user():
-        return UserRepository.store()
+    def destroy(id: int):
+        return UserRepository.destroy(id)

@@ -5,15 +5,20 @@ user_blueprint = Blueprint("user", __name__)
 
 
 @user_blueprint.route("/users", methods=["GET"])
-def get_users():
-    return UserController.get_all_users()
+def index():
+    return UserController.index()
 
 
 @user_blueprint.route("/users", methods=["POST"])
-def create_user():
-    return UserController.create_user()
+def store():
+    return UserController.store()
 
 
 @user_blueprint.route("/users/<int:id>", methods=["GET"])
-def get_user(id):
-    return UserController.get_user(id)
+def show(id):
+    return UserController.show(id)
+
+
+@user_blueprint.route("/users/<int:id>", methods=["DELETE"])
+def destroy(id):
+    return UserController.destroy(id)
