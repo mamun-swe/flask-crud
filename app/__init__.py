@@ -1,5 +1,6 @@
 from flask import Flask  # type: ignore
 from flask_sqlalchemy import SQLAlchemy  # type: ignore
+from flask_migrate import Migrate # type: ignore
 from config import Config
 
 db = SQLAlchemy()
@@ -10,6 +11,7 @@ def create_app():
     app.config.from_object(Config)
 
     db.init_app(app)
+    migrate = Migrate(app, db)
 
     from app.routes.user_routes import user_blueprint
 
